@@ -17,6 +17,7 @@ import MyOder from './Pages/MyOder';
 import ManageOrder from './Pages/ManageOrder';
 import PrivateRoute from './Route/PrivateRoute';
 import Homes from './Pages/Homes';
+import Footer from './Pages/Footer';
 
 // import Footer from './components/Footer/Footer';
 
@@ -55,7 +56,9 @@ function App() {
                 <Route path="/newService">
                   <AddService></AddService>
                 </Route>
+               
               </Switch>
+              <Footer></Footer>
             </Router>
       </AuthProvider>
       
