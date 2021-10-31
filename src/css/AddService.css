@@ -1,0 +1,23 @@
+
+.add-seervice form {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+.add-seervice form input,textarea,button {
+    width: 60%;
+    margin-bottom: 10px;
+    background: rgb(209, 209, 209);
+    color: tomato;
+    
+    border: 2px solid gray;
+    
+}
+.add-seervice form input::placeholder {
+    color: rgb(12, 5, 43);
+}
+.add-seervice form textarea::placeholder {
+    color: rgb(12, 5, 43);
+}

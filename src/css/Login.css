@@ -1,0 +1,18 @@
+.authen-btn button{
+    background: lightseagreen;
+}
+button, input, optgroup, select, textarea {
+    margin-right: 5px;
+    border-radius: 10px;
+    border: none;
+
+    }
+.regis-btn{
+     background: rgb(255, 175, 3);
+}
+.reset-btn{
+    background: rgb(9, 223, 223);
+}
+.reset-btn:hover{
+    background: rgb(3, 255, 146);
+}
