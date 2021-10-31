@@ -25,7 +25,7 @@ const ManageOrder = () => {
             <h2>Manage order</h2>
             {orders?.map((dr,index)=>(
                     <Container>
-                    <Table striped bordered hover>
+                    <Table striped bordered hover responsive="sm" xs={12} md={8}>
                         <thead>
                             <tr>
                             <th>Product</th>
@@ -33,15 +33,17 @@ const ManageOrder = () => {
                             <th>Email</th>
                             <th>Product ID</th>
                             <th>USD</th>
+                            
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody responsive="sm">
                             <tr>
                             <td><img src={dr.img} alt="" /></td>
                             <td>{user.displayName}</td>
                             <td>{user.email}</td>
                             <td>{dr._id}</td>
                             <td>{dr.price} $</td>
+                            
                             <td> 
                                 <button>Cancel</button>
                                 <button>Comfrom</button>
@@ -53,6 +55,7 @@ const ManageOrder = () => {
                         </tbody>
                      </Table>
                      </Container>
+                     
              ))}
             
         </div>
