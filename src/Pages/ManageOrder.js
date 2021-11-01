@@ -32,7 +32,7 @@ const ManageOrder = () => {
        setOrders(remaining)
     }
     return (
-        <div className="py-5">
+        <div className="py-5" style={{marginBottom:'24%'}}>
             <h2>Manage order</h2>
             {orders?.map((dr,index)=>  ( 
                 
