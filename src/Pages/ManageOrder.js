@@ -23,7 +23,7 @@ const ManageOrder = () => {
 
     const handleDelete=id=>{
         console.log(id);
-        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+        fetch(`https://ghostly-cheateau-43841.herokuapp.com/deleteProduct/${id}`,{
             method:"DELETE",
         })
        .then(res=>res.json())

@@ -4,13 +4,13 @@ import { Container, Table } from 'react-bootstrap';
 const DeleteService = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://ghostly-cheateau-43841.herokuapp.com/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])
     const handleDelete=(id)=>{
         console.log(id);
-        fetch(`http://localhost:5000/servces/${id}`,{
+        fetch(`https://ghostly-cheateau-43841.herokuapp.com/servces/${id}`,{
             method:"DELETE",
         })
        .then(res=>res.json())

@@ -27,7 +27,7 @@ const MyOder = () => {
     //delete order
     const handleDelete=(id)=>{
         console.log(id);
-        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+        fetch(`https://ghostly-cheateau-43841.herokuapp.com/deleteProduct/${id}`,{
             method:"DELETE",
         })
        .then(res=>res.json())
@@ -38,7 +38,7 @@ const MyOder = () => {
 
     const onSubmit = data => {
         data.order=orders
-        fetch('http://localhost:5000/confrom',{
+        fetch('https://ghostly-cheateau-43841.herokuapp.com/confrom',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
