@@ -21,6 +21,7 @@ import Footer from './Pages/Footer';
 import Shipping from './Pages/Shipping';
 import Congratulation from './Pages/Congratulation';
 import DeleteService from './Pages/DeleteService';
+import NotFound from './Pages/NotFound';
 
 // import Footer from './components/Footer/Footer';
 
@@ -38,9 +39,7 @@ function App() {
                 <Route path="/home">
                   <Home></Home>
                 </Route>
-                <Route path="/home">
-                  <Home></Home>
-                </Route>
+                
                 <Route path="/about">
                   <AboutUs></AboutUs>
                 </Route>
@@ -67,6 +66,9 @@ function App() {
                 </Route>
                 <Route path="/newService">
                   <AddService></AddService>
+                </Route>
+                <Route path="*">
+                  <NotFound></NotFound>
                 </Route>
                
               </Switch>
