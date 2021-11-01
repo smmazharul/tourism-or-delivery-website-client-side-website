@@ -49,9 +49,10 @@ const handleAddToCart=()=>{
                                     <Card.Footer>
                                     <div className='service-btn'>
                                     {/* <button onClick={()=>addToCart(service)} className='button1'>Booking Now</button> */}
-                                    <button onClick={()=>handleAddToCart(service)} className='button1'>Purchage Now</button>
-                                    <Link to={`/service/${_id}`}>
+                                    
+                                    <Link to={`/myOrder/${_id}`}>
                                      {/* <button className='button2'>See Details</button> */}
+                                     <button onClick={()=>handleAddToCart(service)} className='button1'>Purchage Now</button>
                                     </Link>
                                     </div>
                                     </Card.Footer>

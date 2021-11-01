@@ -1,10 +1,10 @@
 
-import { Container, Table } from 'react-bootstrap';
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Col, Container, Row } from 'react-bootstrap';
 import UseAuth from '../Hooks/UseAuth';
-import { Card,Button,} from 'react-bootstrap';
+import { Card,Button, Container, Table,} from 'react-bootstrap';
 
 const ManageOrder = () => {
     const {AllContexts, selectedService}= UseAuth();
@@ -23,37 +23,45 @@ const ManageOrder = () => {
     return (
         <div className="py-5">
             <h2>Manage order</h2>
-            {orders?.map((dr,index)=>(
-                    <Container>
-                    <Table striped bordered hover responsive="sm" xs={12} md={8}>
-                        <thead>
-                            <tr>
-                            <th>Product</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Product ID</th>
-                            <th>USD</th>
-                            
-                            </tr>
-                        </thead>
-                        <tbody responsive="sm">
-                            <tr>
-                            <td><img src={dr.img} alt="" /></td>
-                            <td>{user.displayName}</td>
-                            <td>{user.email}</td>
-                            <td>{dr._id}</td>
-                            <td>{dr.price} $</td>
-                            
-                            <td> 
-                                <button>Cancel</button>
-                                <button>Comfrom</button>
-                            
-                             </td>
+            {orders?.map((dr,index)=>  ( 
+                
+                    
+                
+                    <Container key={dr._id} >
 
-                            </tr>
-                            
-                        </tbody>
-                     </Table>
+                            <Table responsive bordered hover responsive="sm" responsive="md" responsive="xl">
+                            <thead>
+                                <tr>
+                                
+                                
+                                    <th >Pruduct</th>
+                                    <th >Name</th>
+                                    <th >Email</th>
+                                    <th >Prduct ID</th>
+                                    <th >USD</th>
+                                    
+                                
+                                </tr>
+                            </thead>
+                            <tbody sm={2}>
+                                <tr>
+                                
+                                
+                                    <td ><img src={dr.img} alt="" /></td>
+                                    <td >{user.displayName}</td>
+                                    <td >{user.email}</td>
+                                    <td >{dr._id}</td>
+                                    <td >{dr.price} $</td>
+                                    <td><button>Cancel</button> </td>
+                                    <td ><button>Confrom</button></td>
+                                
+                                </tr>
+                                
+                                
+                            </tbody>
+                            </Table>
+
+
                      </Container>
                      
              ))}

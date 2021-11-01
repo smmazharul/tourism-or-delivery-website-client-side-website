@@ -18,6 +18,8 @@ import ManageOrder from './Pages/ManageOrder';
 import PrivateRoute from './Route/PrivateRoute';
 import Homes from './Pages/Homes';
 import Footer from './Pages/Footer';
+import Shipping from './Pages/Shipping';
+import Congratulation from './Pages/Congratulation';
 
 // import Footer from './components/Footer/Footer';
 
@@ -49,6 +51,12 @@ function App() {
                 </Route>
                 <Route path="/myOrder">
                   <MyOder></MyOder>
+                </Route>
+                <Route path="/shipping">
+                  <Shipping></Shipping>
+                </Route>
+                <Route path="/congratulation">
+                  <Congratulation></Congratulation>
                 </Route>
                 <Route path="/login">
                   <Login></Login>

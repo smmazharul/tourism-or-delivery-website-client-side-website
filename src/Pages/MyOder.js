@@ -21,34 +21,32 @@ const MyOder = () => {
     },[])
     console.log(orders.length);
 
+    //delete order
     const handleDelete=(id)=>{
-        
         console.log(id);
         fetch(`https://ghostly-cheateau-43841.herokuapp.com/deleteProduct/${id}`,{
-            method:'DELETE',
-           
+            method:"DELETE",
         })
-        .then(res=>res.json)
-        .then(data=>{
-            if(data.deletedCount===1){
-                const remainingOrder=orders.filter((order)=>order._id!==id);
-                setOrders(remainingOrder);}
-            else{
-               alert('hfjdsfhhdfh')
-
-            }
-            
-        })
+       .then(res=>res.json())
+       .then(data=>console.log(data))
     }
     return (
-        <div>
-            <h2>this is my orders {orders?.length}</h2>
-
-              
-            {orders?.map((dr,index)=>(
+        <div >
+            <h2> Orders count {orders?.length}</h2>
+                
+                    <div className="">
+                    <Link to='/shipping'>
+                        <button className="p-3 bg-info text-white bold">Confrom your order</button>
+                    </Link>
+                    </div>
+              <div>
+              {orders?.map((dr,index)=>(
                
-               <div>
+               <div key={dr._id}>
+                   
                    <Container>
+                   
+                   
                   <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={dr.img} />
                 <Card.Body>
@@ -61,9 +59,13 @@ const MyOder = () => {
                 </Card.Body>
                 </Card>
                 </Container>
+                
                </div>
                 
             ))}
+              </div>
+          
+                
               
             
         </div>
