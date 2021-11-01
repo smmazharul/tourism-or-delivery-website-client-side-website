@@ -6,10 +6,29 @@ import { Link } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
 
 const Homes = (props) => {
-    const {titile,description,time,img,type,cost,price}=props.user;
+    // const {titile,description,time,img,type,cost,price}=props.user;
+    // const service=props.user;
+    // const {addToCart}=UseAuth()
+    const {titile,description,time,img,type,cost,price,_id}=props.user;
     const service=props.user;
-    const {addToCart}=UseAuth()
-
+    const {AllContexts, selectedService}= UseAuth();
+    const {user,logOut}=AllContexts;
+    const {displayName,email,photoURL}=user;
+  
+    const handleAddToCart=()=>{
+      const data=service;
+      data.email=`${email}`
+      delete service._id;
+      
+      fetch('https://ghostly-cheateau-43841.herokuapp.com/addOrder',{
+          method:'post',
+          headers:{
+              'content-type':'application/json'
+          },
+          body: JSON.stringify(data),
+      })
+      console.log(data);
+  }
     return (
         <div>
             
@@ -28,8 +47,8 @@ const Homes = (props) => {
         <p className="card-text d-flex justify-content-evenly"> <span>{cost}</span> <span>{time} mim</span> </p>
         {/* <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p> */}
             <div className='d-flex justify-content-evenly'>
-            <Link to="/service">
-             <button  style={{background:'orange', color:'#fff', width:'100px'}} onClick={()=>addToCart(service)}>Purchase</button>
+            <Link to={`/myOrder/${_id}`}>
+             <button  style={{background:'orange', color:'#fff', width:'100px'}} onClick={()=>handleAddToCart(service)}>Purchase</button>
                                     
              </Link>
             <h5 style={{ color:'orange'}}>Price: {price} $</h5>

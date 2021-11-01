@@ -23,7 +23,7 @@ const Header = () => {
                     <Nav.Link as={NavLink}  to="/home">Home</Nav.Link>
                     <Nav.Link as={NavLink} to="/about">About Us</Nav.Link>
 
-                    <Nav.Link as={NavLink} to="/service">Service</Nav.Link>
+                    <Nav.Link as={NavLink} to="/service">Package</Nav.Link>
                     {/* <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link> */}
                     {/* <Nav.Link as={NavLink} to="/cart"><FontAwesomeIcon icon={faShoppingCart} /> <Badge bg="info">{selectedService.length}</Badge></Nav.Link> */}
 
@@ -37,7 +37,7 @@ const Header = () => {
                        <>
                        <Nav.Link as={NavLink} to="/manageOrder">Manage Order</Nav.Link>
                        <Nav.Link as={NavLink} to="/myOrder">My order</Nav.Link>
-                       <Nav.Link as={NavLink} to="/newService">Add A New Service</Nav.Link>
+                       <Nav.Link as={NavLink} to="/newService">Add Service</Nav.Link>
                        <span className="user-name"><img src={photoURL}  alt="" /></span>
                        <button onClick={logOut} className="log-btn">Log Out</button></>
                     )}

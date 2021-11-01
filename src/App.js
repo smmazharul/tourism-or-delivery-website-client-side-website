@@ -53,9 +53,9 @@ function App() {
                 <Route path="/deleteService">
                   <DeleteService></DeleteService>
                 </Route>
-                <Route path="/myOrder">
+                <PrivateRoute path="/myOrder">
                   <MyOder></MyOder>
-                </Route>
+                </PrivateRoute>
                 <Route path="/shipping">
                   <Shipping></Shipping>
                 </Route>

@@ -4,27 +4,19 @@ import { Container, Table } from 'react-bootstrap';
 const DeleteService = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('https://ghostly-cheateau-43841.herokuapp.com/services')
+        fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])
-    const handleDelete=id=>{
-        const url=`https://ghostly-cheateau-43841.herokuapp.com/services/${id}`;
-        fetch(url,{
-            method:'DELETE',
-
+    const handleDelete=(id)=>{
+        console.log(id);
+        fetch(`http://localhost:5000/servces/${id}`,{
+            method:"DELETE",
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.deletedCount){
-                alert("deleted")
-
-                const remaining = services.filter(service=>service._id !==id);
-            setServices(remaining)
-            }
-            
-        })
+       .then(res=>res.json())
+       .then(data=>console.log(data))
+       const remaining= services.filter(service=>service._id !==id)
+       setServices(remaining)
     }
     return (
         <div>

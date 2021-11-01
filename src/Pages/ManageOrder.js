@@ -20,6 +20,17 @@ const ManageOrder = () => {
 
         .then(data=>setOrders(data))
     },[])
+
+    const handleDelete=id=>{
+        console.log(id);
+        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+            method:"DELETE",
+        })
+       .then(res=>res.json())
+       .then(data=>console.log(data))
+       const remaining= orders.filter(order=>order._id !==id)
+       setOrders(remaining)
+    }
     return (
         <div className="py-5">
             <h2>Manage order</h2>
@@ -52,7 +63,7 @@ const ManageOrder = () => {
                                     <td >{user.email}</td>
                                     <td >{dr._id}</td>
                                     <td >{dr.price} $</td>
-                                    <td><button>Cancel</button> </td>
+                                    <td><button onClick={()=>handleDelete(dr._id)}>Cancel</button> </td>
                                     <td ><button>Confrom</button></td>
                                 
                                 </tr>
