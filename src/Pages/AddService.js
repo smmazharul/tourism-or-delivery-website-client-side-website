@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import '../css/AddService.css';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 const AddService = () => {
     const { register, handleSubmit, reset} = useForm();
     const onSubmit = data => {
@@ -29,6 +30,10 @@ const AddService = () => {
                 <input type="number" {...register("price", )}  placeholder='price'/>
                 <input type="submit" value='Add Service' />
             </form>
+
+            <Link to='/deleteService'>
+                <button >Delete Service</button>
+            </Link>
         </div>
     );
 };

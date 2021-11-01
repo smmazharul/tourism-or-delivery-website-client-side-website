@@ -20,6 +20,7 @@ import Homes from './Pages/Homes';
 import Footer from './Pages/Footer';
 import Shipping from './Pages/Shipping';
 import Congratulation from './Pages/Congratulation';
+import DeleteService from './Pages/DeleteService';
 
 // import Footer from './components/Footer/Footer';
 
@@ -48,6 +49,9 @@ function App() {
                 </PrivateRoute>
                 <Route path="/manageOrder">
                   <ManageOrder></ManageOrder>
+                </Route>
+                <Route path="/deleteService">
+                  <DeleteService></DeleteService>
                 </Route>
                 <Route path="/myOrder">
                   <MyOder></MyOder>
