@@ -17,12 +17,25 @@ const [error,setError]=useState('');
 const [email, setEmail]=useState('');
 const [password, setPassowrd]=useState('');
 const[isLogin,setIsLogin]=useState(false)
+const[isLoading,setIsLoading]=useState(true)
 
 const signInWithGoogle=()=>{
+    setIsLoading(true)
   return  signInWithPopup(auth, googleProvider)
 
 }
-
+useEffect(() => {
+    const unsubscribed = onAuthStateChanged(auth, user => {
+        if (user) {
+            setUser(user);
+        }
+        else {
+            setUser({})
+        }
+        setIsLoading(false);
+    });
+    return () => unsubscribed;
+}, [])
 
 const signInWithGithub=()=>{
     return signInWithPopup(auth, githubProvider)
@@ -120,6 +133,7 @@ const setUserName=()=>{
     })
 }
 const logOut=()=>{
+    setIsLoading(true)
  signOut(auth)
  .then(()=>{
     setUser({})
@@ -146,6 +160,7 @@ useEffect(()=>{
         isLogin,
         setError,
         setUser,
+        isLoading,
         handleResetPassword,
         handleNameChange
     }
